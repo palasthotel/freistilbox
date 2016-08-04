@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"encoding/json"
 	"sort"
+	"fmt"
 )
 
 func Perform(path string) []byte {
@@ -28,4 +29,11 @@ func Clusters() []Cluster {
 	sort.Sort(ClusterList(parsed.Data));
 	return parsed.Data;
 
+}
+
+func Website(Id int) Website {
+	var input=Perform(fmt.Sprintf("websites/%d",Id));
+	var parsed WebsiteCall=WebsiteCall{}
+	json.Unmarshal(input,&parsed);
+	return parsed.Data;
 }
