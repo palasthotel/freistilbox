@@ -22,7 +22,7 @@ func (_ Cmd) Help(args []string) {
 func (_ Cmd) Execute(args []string) {
 	var clusters=api.Clusters()
 	for _,value := range clusters {
-		fmt.Printf("%s: %s\n",value.Name,value.Description);
+		fmt.Printf("%s: %s\n",value.Attributes.Name,value.Attributes.Description);
 	}
 
 }

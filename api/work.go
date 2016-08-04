@@ -23,9 +23,9 @@ func Perform(path string) []byte {
 
 func Clusters() []Cluster {
 	var input=Perform("clusters");
-	var parsed []Cluster=[]Cluster{}
+	var parsed ClusterCall=ClusterCall{}
 	json.Unmarshal(input,&parsed);
-	sort.Sort(ClusterList(parsed));
-	return parsed;
+	sort.Sort(ClusterList(parsed.Data));
+	return parsed.Data;
 
 }
