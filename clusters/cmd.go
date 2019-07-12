@@ -20,9 +20,9 @@ func (_ Cmd) Help(args []string) {
 }
 
 func (_ Cmd) Execute(args []string) {
-	var clusters=api.Clusters()
+	var clusters=api.FetchClusters()
 	for _,value := range clusters {
-		fmt.Printf("%s: %s (%d Sites)\n",value.Attributes.Name,value.Attributes.Description,value.Relationships.Websites.Data.Len());
+		fmt.Printf("%s - %s: %s (%d Sites)\n",value.Id,value.Attributes.Name,value.Attributes.Description,value.Relationships.Websites.Data.Len());
 	}
 
 }

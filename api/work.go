@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"sort"
 	"fmt"
+	"bytes"
 )
 
 func Perform(path string) []byte {
@@ -22,7 +23,22 @@ func Perform(path string) []byte {
 	return data;
 }
 
-func Clusters() []Cluster {
+func Post(path string, payload []byte) []byte {
+	var cred=credentials.Load();
+	var reader = bytes.NewReader(payload);
+	var req,_=http.NewRequest("POST","https://dashboard.freistilbox.com/api/"+path,reader)
+	req.Header.Add("X-User-Email",cred.User);
+	req.Header.Add("X-User-Token",cred.Token);
+	req.Header.Add("Content-Type","application/json");
+	var client=http.Client{}
+
+	var resp,_=client.Do(req);
+	defer resp.Body.Close()
+	var data,_=ioutil.ReadAll(resp.Body);
+	return data;
+}
+
+func FetchClusters() []Cluster {
 	var input=Perform("clusters");
 	var parsed ClusterCall=ClusterCall{}
 	json.Unmarshal(input,&parsed);
@@ -31,7 +47,7 @@ func Clusters() []Cluster {
 
 }
 
-func Website(Id int) Website {
+func FetchWebsite(Id int) Website {
 	var input=Perform(fmt.Sprintf("websites/%d",Id));
 	var parsed WebsiteCall=WebsiteCall{}
 	json.Unmarshal(input,&parsed);

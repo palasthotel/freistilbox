@@ -7,6 +7,7 @@ import (
 	"github.com/palasthotel/freistilbox/credentials"
 	"github.com/palasthotel/freistilbox/api"
 	"github.com/palasthotel/freistilbox/clusters"
+	"github.com/palasthotel/freistilbox/websites"
 )
 
 func Fill() {
@@ -16,5 +17,6 @@ func Fill() {
 		credentials.Cmd{},
 		api.Cmd{},
 		clusters.Cmd{},
+		websites.Create{},
 	}
 }

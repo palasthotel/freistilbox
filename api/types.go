@@ -24,7 +24,7 @@ type ClusterRelations struct {
 }
 
 type Cluster struct {
-	Id int
+	Id string
 	Attributes ClusterAttributes
 	Relationships ClusterRelations
 }
