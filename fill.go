@@ -18,5 +18,6 @@ func Fill() {
 		api.Cmd{},
 		clusters.Cmd{},
 		websites.Create{},
+		websites.Update{},
 	}
 }

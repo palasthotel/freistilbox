@@ -9,7 +9,7 @@ type ClusterAttributes struct {
 }
 
 type Relation struct {
-	Id int
+	Id string
 	Type string
 }
 
@@ -41,7 +41,7 @@ type WebsiteAttributes struct {
 	Maindomain string
 	Repositorybranch string
 	Repositoryurl string
-	Siteno int
+	Siteno int `json:"site-no"`
 	Webmaster string
 }
 

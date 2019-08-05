@@ -7,6 +7,8 @@ This Readme will receive more love and content as the project
 progresses. For now, there are just two commands implemented
 and they're not that helpful.
 
+The Freistilbox API documentation can be found [here](https://dashboard.freistilbox.com/docs/apis/v1)
+
 ## structure
 
 the command package defines an interface every command has to
