@@ -19,5 +19,6 @@ func Fill() {
 		clusters.Cmd{},
 		websites.Create{},
 		websites.Update{},
+		websites.CreateDB{},
 	}
 }

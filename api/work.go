@@ -3,7 +3,7 @@ package api
 import (
 	"github.com/palasthotel/freistilbox/credentials"
 	"net/http"
-	"net/url"
+	_ "net/url"
 	"io/ioutil"
 	"encoding/json"
 	"sort"
