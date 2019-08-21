@@ -39,7 +39,7 @@ func (cmd Create) Execute(args []string) {
 		}
 	}
 	parsed_cluster_id,_ := strconv.Atoi(foundCluster.Id);
-	fmt.Printf("Cluster: %s (%s)\nDomain: %s\nenv: %s\nwebmaster: %s\nbranch: %s\n",cluster,foundCluster.Id,domain,env,webmaster,repository);
+	//fmt.Printf("Cluster: %s (%s)\nDomain: %s\nenv: %s\nwebmaster: %s\nbranch: %s\n",cluster,foundCluster.Id,domain,env,webmaster,repository);
 	dataset := Payload {}
 	dataset.Website.Cluster_id = parsed_cluster_id;
 	dataset.Website.Main_domain = domain;
